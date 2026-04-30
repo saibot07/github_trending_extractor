@@ -1,6 +1,9 @@
-# Ignore Python cache files
-__pycache__/
+# Python-related files
 *.pyc
-*.pyo
-*.pyd
-*.env
+__pycache__/
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env

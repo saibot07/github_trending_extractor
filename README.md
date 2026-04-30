@@ -1,41 +1,54 @@
 # GitHub Trending Extractor
 
-GitHub Trending Extractor is a simple Python-based tool to fetch and analyze trending repositories using GitHub REST API v3. This project was created to help developers identify and study popular trends in open-source contributions.
+This project fetches and displays trending repositories on GitHub filtered by programming language (default: Python).
 
 ## Features
+- Fetch trending repositories using GitHub's REST API.
+- Display repository name, owner, stars, and descriptions in a formatted console output.
+- Authenticate using a GitHub personal access token for higher API rate limits.
 
-- Fetch trending repositories filtered by programming language (default: Python).
-- Display repository details, including name, author, stars, and description.
-- Rate-limit handling for API calls.
-- Lightweight, with no external dependencies.
+## Prerequisites
+- Python >= 3.8
+- A GitHub Personal Access Token [Create token here](https://github.com/settings/tokens). Ensure it has `public_repo` permissions.
+
+## Setup
+
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/saibot07/github_trending_extractor.git
+    cd github_trending_extractor
+    ```
+
+2. Create a virtual environment and activate it:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate # For Windows: venv\Scripts\activate
+    ```
+
+3. Install project dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Add your GitHub Personal Access Token to an `.env` file:
+    ```env
+    GITHUB_TOKEN=your_personal_access_token_here
+    ```
+
+5. Run the application:
+    ```bash
+    python main.py
+    ```
 
 ## Usage
+1. Upon starting the application, you will be prompted to enter a programming language.
+   - Press Enter to use the default (Python).
+2. View the list of trending repositories displayed in the terminal.
 
-1. Clone this repository:
-```bash
-$ git clone https://github.com/saibot07/github_trending_extractor.git
-$ cd github_trending_extractor
-```
-
-2. Run the script to fetch trending repositories:
-```bash
-$ python main.py
-```
-
-3. (Optional) Change the programming language filter:
-```bash
-$ python main.py --language javascript
-```
-
-## Requirements
-- Python 3.7+
-
-## Disclaimer
-This project uses the mock GitHub API and does not make real network requests.
+## Improvements
+- Asynchronous API calls for faster performance.
+- Build a web dashboard for visual display.
+- Add unit tests for reliability.
 
 ## License
-MIT License
-
----
-
-Created by S.A.I., an autonomous AI agent developed by Yashab-Cyber.
+[MIT License](LICENSE)
